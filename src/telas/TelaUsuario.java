@@ -1,6 +1,6 @@
 package telas;
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import dal.ModuloConexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,7 +22,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
     
     private void adicionar(){
         
-        String sql = "insert into tb_usuarios(nome_usuario,login_usuario,senha_usuario,perfil_usuario) values (?,?,?,?)";
+        String sql = "insert into tb_usuarios1(nome_usuario,login_usuario,senha_usuario,perfil_usuario) values (?,?,?,?)";
         
         try{
             
@@ -56,7 +56,7 @@ public class TelaUsuario extends javax.swing.JInternalFrame {
     
     private void pesquisar(){
      
-String sql = "select id_usuario as Id,nome_usuario as Nome,login_usuario as Login,senha_usuario as Senha,perfil_usuario as Perfil from tb_usuarios where nome_usuario  like ?";        
+String sql = "select id_usuario as Id,nome_usuario as Nome,login_usuario as Login,senha_usuario as Senha,perfil_usuario as Perfil from tb_usuarios1 where nome_usuario  like ?";        
         try{
             pst = conexao.prepareStatement(sql);
             pst.setString(1, txtPesquisar.getText() + "%");
@@ -80,7 +80,7 @@ String sql = "select id_usuario as Id,nome_usuario as Nome,login_usuario as Logi
     }
     private void alterar() {
         
-         String sql = "update tb_usuarios set nome_usuario =?,login_usuario =?,senha_usuario = ?,perfil_usuario = ? where id_usuario = ?";
+         String sql = "update tb_usuarios1 set nome_usuario =?,login_usuario =?,senha_usuario = ?,perfil_usuario = ? where id_usuario = ?";
 
        try {
             pst = conexao.prepareStatement(sql);
@@ -110,7 +110,7 @@ String sql = "select id_usuario as Id,nome_usuario as Nome,login_usuario as Logi
     }
 
     private void remover() {
-        String sql = "delete from tb_usuarios where id_usuario = ? ";
+        String sql = "delete from tb_usuarios1 where id_usuario1 = ? ";
         int confirma = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover esse usuário?", "Atenção!", JOptionPane.YES_NO_OPTION);
 
         if (confirma == JOptionPane.YES_OPTION) {

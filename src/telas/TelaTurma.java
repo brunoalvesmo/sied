@@ -1,6 +1,6 @@
 package telas;
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import dal.ModuloConexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,7 +20,7 @@ public class TelaTurma extends javax.swing.JInternalFrame {
     }
     private void adicionar(){
         
-        String sql = "insert into tb_turma(nome_turma,turno,id_escola) values (?,?,?)";
+        String sql = "insert into tb_turma1(nome_turma,turno,id_escola) values (?,?,?)";
         
         try{
             
@@ -52,7 +52,7 @@ public class TelaTurma extends javax.swing.JInternalFrame {
     }
     private void pesquisar(){
      
-String sql = "select id_turma as Id,nome_turma as Nome,turno as Turno,id_escola as IdEscola from tb_turma where nome_turma  like ?";        
+String sql = "select id_turma1 as Id,nome_turma as Nome,turno as Turno,id_escola as IdEscola from tb_turma where nome_turma  like ?";        
         try{
             pst = conexao.prepareStatement(sql);
             pst.setString(1, txtPesquisar.getText() + "%");
@@ -81,7 +81,7 @@ String sql = "select id_turma as Id,nome_turma as Nome,turno as Turno,id_escola 
     
     private void editar(){
         
-        String sql = "update tb_turma set nome_turma =?,turno =?,id_escola =? where id_turma =?";
+        String sql = "update tb_turma1 set nome_turma =?,turno =?,id_escola =? where id_turma =?";
      try {
             pst = conexao.prepareStatement(sql);
             pst.setString(1, txtNome.getText());
@@ -111,7 +111,7 @@ String sql = "select id_turma as Id,nome_turma as Nome,turno as Turno,id_escola 
 
     private void pesquisar_escola(){
         
-        String sql = "select * from tb_escola where id_escola=?";
+        String sql = "select * from tb_escola1 where id_escola=?";
         
         try{
             
@@ -151,7 +151,7 @@ String sql = "select id_turma as Id,nome_turma as Nome,turno as Turno,id_escola 
         ((DefaultTableModel) tblTurma.getModel()).setRowCount(0);
 }
      private void remover() {
-        String sql = "delete from tb_turma where id_turma = ? ";
+        String sql = "delete from tb_turma1 where id_turma1 = ? ";
         int confirma = JOptionPane.showConfirmDialog(null, "Tem certeza que deseja remover essa turma?", "Atenção!", JOptionPane.YES_NO_OPTION);
 
         if (confirma == JOptionPane.YES_OPTION) {
@@ -175,7 +175,7 @@ String sql = "select id_turma as Id,nome_turma as Nome,turno as Turno,id_escola 
             }
      private void soma_alunos(){
             
-            String sql = "select count(*) from tb_aluno";
+            String sql = "select count(*) from tb_aluno1";
             
             try{
                 pst = conexao.prepareStatement(sql);
@@ -195,7 +195,7 @@ String sql = "select id_turma as Id,nome_turma as Nome,turno as Turno,id_escola 
         
         private void soma_prof(){
             
-            String sql = "select count(*) from tb_professor";
+            String sql = "select count(*) from tb_professor1";
             
             try{
             pst = conexao.prepareStatement(sql);
@@ -214,7 +214,7 @@ String sql = "select id_turma as Id,nome_turma as Nome,turno as Turno,id_escola 
         
         private void soma_turma(){
             
-            String sql = "select count(*) from tb_turma";
+            String sql = "select count(*) from tb_turma1";
             
             try{
                 pst = conexao.prepareStatement(sql);

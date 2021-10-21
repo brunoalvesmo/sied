@@ -26,7 +26,7 @@ public class TelaSuspensao extends javax.swing.JFrame {
 
     private void pesquisar(){
         
-        String sql = "select * from tb_aluno where nome_aluno like ?";
+        String sql = "select * from tb_aluno1 where nome_aluno like ?";
         
         try{
             pst = conexao.prepareStatement(sql);

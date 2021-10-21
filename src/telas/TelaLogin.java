@@ -1,6 +1,6 @@
 package telas;
 
-import com.sun.glass.events.KeyEvent;
+import java.awt.event.KeyEvent;
 import java.sql.*;
 import dal.ModuloConexao;
 import java.awt.Color;
@@ -15,7 +15,7 @@ public class TelaLogin extends javax.swing.JFrame {
         
     public void logar(){
             
-        String sql = "select * from tb_usuarios where login_usuario = ? and senha_usuario =?";
+        String sql = "select * from tb_usuarios1 where login_usuario = ? and senha_usuario =?";
         
         try{
         
@@ -76,7 +76,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         private void soma_de_alunos(){
             
-            String sql = "select count(*) from tb_aluno";
+            String sql = "select count(*) from tb_aluno1";
             
             try{
                 pst = conexao.prepareStatement(sql);
@@ -96,7 +96,7 @@ public class TelaLogin extends javax.swing.JFrame {
         
         private void soma_prof(){
             
-            String sql = "select count(*) from tb_professor";
+            String sql = "select count(*) from tb_professor1";
             
             try{
             pst = conexao.prepareStatement(sql);
@@ -115,7 +115,7 @@ public class TelaLogin extends javax.swing.JFrame {
         
         private void soma_turma(){
             
-            String sql = "select count(*) from tb_turma";
+            String sql = "select count(*) from tb_turma1";
             
             try{
                 pst = conexao.prepareStatement(sql);
@@ -138,6 +138,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         jLabel7 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -158,6 +159,15 @@ public class TelaLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton1.setText("Limpar");
+        jButton1.setPreferredSize(new java.awt.Dimension(63, 25));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 80, 40));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/education_computer_school_graduate_cap_monitor_icon_149680.png"))); // NOI18N
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 70, 70));
@@ -180,7 +190,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         btLogar.setBackground(new java.awt.Color(0, 0, 0));
         btLogar.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btLogar.setText("LOGIN");
+        btLogar.setText("Entrar");
         btLogar.setToolTipText("ENTRAR");
         btLogar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btLogar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -189,7 +199,7 @@ public class TelaLogin extends javax.swing.JFrame {
                 btLogarActionPerformed(evt);
             }
         });
-        getContentPane().add(btLogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 90, 40));
+        getContentPane().add(btLogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 90, 40));
 
         txtSenha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtSenha.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -255,6 +265,10 @@ public class TelaLogin extends javax.swing.JFrame {
         soma_turma();
     }//GEN-LAST:event_btLogarActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -292,6 +306,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btLogar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

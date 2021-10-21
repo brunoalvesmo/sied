@@ -11,9 +11,9 @@ import java.sql.*;
         java.sql.Connection conexao = null;
         
         String driver = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/db_escola";
+        String url = "jdbc:mysql://localhost:3306/db_escola1";
         String user = "root";
-        String password = "cristiano3241";   
+        String password = "1234";   
         
         try{
           Class.forName(driver);
