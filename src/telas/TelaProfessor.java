@@ -314,7 +314,7 @@ public class TelaProfessor extends javax.swing.JInternalFrame {
         
         private void soma_prof(){
             
-            String sql = "select count(*) from tb_professor";
+            String sql = "select count(*) from tb_professor1";
             
             try{
             pst = conexao.prepareStatement(sql);
@@ -333,7 +333,7 @@ public class TelaProfessor extends javax.swing.JInternalFrame {
         
         private void soma_turma(){
             
-            String sql = "select count(*) from tb_turma";
+            String sql = "select count(*) from tb_turma1";
             
             try{
                 pst = conexao.prepareStatement(sql);
@@ -653,6 +653,11 @@ public class TelaProfessor extends javax.swing.JInternalFrame {
         cboTurno.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cboTurno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Matutino", "Vespertino", "Integral", "Noturno" }));
         cboTurno.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cboTurno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboTurnoActionPerformed(evt);
+            }
+        });
         jPanel1.add(cboTurno, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 190));
@@ -702,6 +707,10 @@ public class TelaProfessor extends javax.swing.JInternalFrame {
     
     pesquisar_turma();        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cboTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTurnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboTurnoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
